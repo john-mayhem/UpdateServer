@@ -104,10 +104,10 @@ jobs:
         echo '# Welcome to UpdateServer' > docfx_project/index.md
         echo '# Welcome to UpdateServer API' > docfx_project/api/index.md
         echo '- name: Home
-      href: index.md
-    - name: API Documentation
-      href: api/
-      homepage: api/index.md' > docfx_project/toc.yml
+  href: index.md
+- name: API Documentation
+  href: api/
+  homepage: api/index.md' > docfx_project/toc.yml
     
     - name: Generate Documentation
       working-directory: docfx_project
