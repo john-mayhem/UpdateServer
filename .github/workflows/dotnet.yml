@@ -35,9 +35,75 @@ jobs:
     
     - name: Prepare DocFX
       run: |
-       mkdir -p docfx_project
-       docfx init -o docfx_project
-       echo '{ "metadata": [{ "src": [{ "files": ["**.csproj"] }], "dest": "api" }], "build": { "content": [{ "files": ["api/**.yml", "api/index.md"] }], "dest": "_site" } }' > docfx_project/docfx.json
+        mkdir -p docfx_project/api docfx_project/articles docfx_project/images
+        echo '{
+          "metadata": [
+            {
+              "src": [
+                {
+                  "files": [
+                    "**.csproj"
+                  ],
+                  "src": "../"
+                }
+              ],
+              "dest": "api",
+              "disableGitFeatures": false,
+              "disableDefaultFilter": false
+            }
+          ],
+          "build": {
+            "content": [
+              {
+                "files": [
+                  "api/**.yml",
+                  "api/index.md"
+                ]
+              },
+              {
+                "files": [
+                  "articles/**.md",
+                  "articles/**/toc.yml",
+                  "toc.yml",
+                  "*.md"
+                ]
+              }
+            ],
+            "resource": [
+              {
+                "files": [
+                  "images/**"
+                ]
+              }
+            ],
+            "overwrite": [
+              {
+                "files": [
+                  "apidoc/**.md"
+                ],
+                "exclude": [
+                  "obj/**",
+                  "_site/**"
+                ]
+              }
+            ],
+            "dest": "_site",
+            "globalMetadataFiles": [],
+            "fileMetadataFiles": [],
+            "template": [
+              "default"
+            ],
+            "postProcessors": [],
+            "markdownEngineName": "markdig",
+            "noLangKeyword": false,
+            "keepFileLink": false,
+            "cleanupCacheHistory": false,
+            "disableGitFeatures": false
+          }
+        }' > docfx_project/docfx.json
+        echo '# Welcome to UpdateServer' > docfx_project/index.md
+        echo '# Welcome to UpdateServer API' > docfx_project/api/index.md
+        echo '# Table of Contents' > docfx_project/toc.yml
     
     - name: Generate Documentation
       working-directory: docfx_project
