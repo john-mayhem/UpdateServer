@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+sing Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +30,9 @@ namespace UpdateServer
             Log.Information("Startup initialized");
         }
 
+        /// <summary>
+        /// Gets the configuration that represents a set of key/value application configuration properties.
+        /// </summary>
         public IConfiguration Configuration { get; }
 
         /// <summary>

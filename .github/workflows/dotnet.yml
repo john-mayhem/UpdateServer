@@ -38,7 +38,7 @@ jobs:
         mkdir -p docfx_project
         docfx init -q -o docfx_project
         echo '{ "metadata": [{ "src": [{ "files": ["**.csproj"] }], "dest": "api" }], "build": { "content": [{ "files": ["api/**.yml", "api/index.md"] }], "dest": "_site" } }' > docfx_project/docfx.json
-    
+
     - name: Generate Documentation
       working-directory: docfx_project
       run: docfx docfx.json
