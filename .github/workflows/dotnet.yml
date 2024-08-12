@@ -35,16 +35,16 @@ jobs:
     
     - name: Prepare DocFX
       run: |
-        mkdir -p docfx_project/api docfx_project/articles docfx_project/images
+        mkdir -p docfx_project/api docfx_project/articles
         echo '{
           "metadata": [
             {
               "src": [
                 {
                   "files": [
-                    "**.csproj"
+                    "UpdateServer.csproj"
                   ],
-                  "src": "../"
+                  "src": ".."
                 }
               ],
               "dest": "api",
@@ -103,7 +103,11 @@ jobs:
         }' > docfx_project/docfx.json
         echo '# Welcome to UpdateServer' > docfx_project/index.md
         echo '# Welcome to UpdateServer API' > docfx_project/api/index.md
-        echo '# Table of Contents' > docfx_project/toc.yml
+        echo '- name: Home
+      href: index.md
+    - name: API Documentation
+      href: api/
+      homepage: api/index.md' > docfx_project/toc.yml
     
     - name: Generate Documentation
       working-directory: docfx_project
