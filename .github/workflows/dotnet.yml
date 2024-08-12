@@ -1,0 +1,51 @@
+name: .NET Build and Documentation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-document:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build
+      run: dotnet build --no-restore
+    
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    
+    - name: Install DocFX
+      run: dotnet tool install -g docfx
+    
+    - name: Generate XML documentation
+      run: dotnet build -c Release /p:DocumentationFile=bin/Release/net8.0/UpdateServer.xml
+    
+    - name: Prepare DocFX
+      run: |
+        mkdir -p docfx_project
+        docfx init -q -o docfx_project
+        echo '{ "metadata": [{ "src": [{ "files": ["**.csproj"] }], "dest": "api" }], "build": { "content": [{ "files": ["api/**.yml", "api/index.md"] }], "dest": "_site" } }' > docfx_project/docfx.json
+    
+    - name: Generate Documentation
+      working-directory: docfx_project
+      run: docfx docfx.json
+    
+    - name: Publish Documentation
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docfx_project/_site
