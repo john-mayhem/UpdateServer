@@ -26,7 +26,7 @@ namespace UpdateServer
             Console.WriteLine(@"
 ╔═══════════════════════════════════════════╗
 ║        Update Server Application          ║
-║              Version 1.0                  ║
+║              Version 0.2                  ║
 ╚═══════════════════════════════════════════╝");
 
             // Configure and create the logger
