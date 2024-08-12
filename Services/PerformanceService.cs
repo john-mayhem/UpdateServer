@@ -135,7 +135,7 @@ namespace UpdateServer.Services
             command.Parameters.AddWithValue("@AverageResponseTime_Ms", metrics.AverageResponseTime_Ms);
 
             await command.ExecuteNonQueryAsync();
-            Log.Debug("Performance metrics stored in database");
+            //Log.Debug("Performance metrics stored in database");
         }
 
         // TODO: Implement these methods based on your specific server setup
