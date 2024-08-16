@@ -34,15 +34,25 @@ namespace UpdateServer.Services
         }
 
 
-        public async Task<string> GetReleaseNotes(string version)
+        public async Task<(string ReleaseNotes, string FileHash)> GetReleaseNotesAndHash(string version)
         {
             using var connection = new SqlConnection(_connectionString);
             await connection.OpenAsync();
 
-            var command = new SqlCommand("SELECT ReleaseNotes FROM Updates_Client WHERE Version = @Version", connection);
+            var command = new SqlCommand("SELECT ReleaseNotes, Hash FROM Updates_Client WHERE Version = @Version", connection);
             command.Parameters.AddWithValue("@Version", version);
-            var result = await command.ExecuteScalarAsync();
-            return result?.ToString() ?? "No release notes available.";
+
+            using var reader = await command.ExecuteReaderAsync();
+            if (await reader.ReadAsync())
+            {
+                var releaseNotes = reader["ReleaseNotes"]?.ToString() ?? "No release notes available.";
+                var fileHash = reader["Hash"]?.ToString() ?? throw new InvalidOperationException("No hash found for the specified version.");
+                return (releaseNotes, fileHash);
+            }
+            else
+            {
+                throw new InvalidOperationException("Specified version not found in the database.");
+            }
         }
 
         public async Task<ClientUpdateInfoModel> GetClientUpdateInfo(string currentVersion)
@@ -50,18 +60,19 @@ namespace UpdateServer.Services
             try
             {
                 var latestVersion = await GetLatestClientVersion();
+                var (releaseNotes, fileHash) = await GetReleaseNotesAndHash(latestVersion);
 
                 return new ClientUpdateInfoModel
                 {
                     LatestVersion = latestVersion,
-                    ReleaseNotes = await GetReleaseNotes(latestVersion),
+                    ReleaseNotes = releaseNotes,
+                    FileHash = fileHash,
                     IsMandatory = latestVersion != currentVersion
                 };
             }
             catch (InvalidOperationException ex)
             {
                 // Log the exception
-                // You might want to inject an ILogger and use it here
                 Console.WriteLine($"Error retrieving client update info: {ex.Message}");
 
                 return new ClientUpdateInfoModel
@@ -73,7 +84,7 @@ namespace UpdateServer.Services
             }
         }
 
-        
+
         public async Task AddClientVersion(string version, string releaseNotes)
         {
             using var connection = new SqlConnection(_connectionString);

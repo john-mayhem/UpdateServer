@@ -60,6 +60,11 @@ namespace UpdateServer.Models
         public string? ReleaseNotes { get; set; }
 
         /// <summary>
+        /// Gets or sets the Hash for the latest version.
+        /// </summary>
+        public string? FileHash { get; set; } 
+
+        /// <summary>
         /// Gets or sets a value indicating whether the update is mandatory.
         /// </summary>
         public bool IsMandatory { get; set; }
