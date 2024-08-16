@@ -38,4 +38,39 @@ namespace UpdateServer.Models
         /// </summary>
         public string Password { get; set; } = string.Empty;
     }
+
+    /// <summary>
+    /// Represents the model for client update information.
+    /// </summary>
+    public class ClientUpdateInfoModel
+    {
+        /// <summary>
+        /// Gets or sets the latest version of the client.
+        /// </summary>
+        public string? LatestVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the download URL for the latest client version.
+        /// </summary>
+        public string? DownloadUrl { get; set; }
+
+        /// <summary>
+        /// Gets or sets the release notes for the latest version.
+        /// </summary>
+        public string? ReleaseNotes { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the update is mandatory.
+        /// </summary>
+        public bool IsMandatory { get; set; }
+    }
+
+    public class ClientUpdateModel
+    {
+        public IFormFile File { get; set; } = null!;
+
+        public string Version { get; set; } = string.Empty;
+
+        public string? ReleaseNotes { get; set; }
+    }
 }

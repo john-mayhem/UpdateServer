@@ -177,8 +177,8 @@ namespace UpdateServer.Services
                     Size BIGINT NOT NULL,
                     Hash NVARCHAR(64) NOT NULL,
                     UploadDate DATETIME2 DEFAULT GETUTCDATE(),
-                    FileChangeDate DATETIME2 NOT NULL,
-                    FilePath NVARCHAR(1000) NOT NULL
+                    FilePath NVARCHAR(1000) NOT NULL,
+                    ReleaseNotes NVARCHAR(MAX) NULL
                 )",
             "Updates_Games" => @"
                 CREATE TABLE Updates_Games (

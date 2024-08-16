@@ -30,9 +30,6 @@ namespace UpdateServer
             Log.Information("Startup initialized");
         }
 
-        /// <summary>
-        /// Gets the configuration that represents a set of key/value application configuration properties.
-        /// </summary>
         public IConfiguration Configuration { get; }
 
         /// <summary>
@@ -81,6 +78,7 @@ namespace UpdateServer
             services.AddSingleton<FileStorageService>();
             services.AddSingleton<PerformanceService>();
             services.AddHostedService<PerformanceService>();
+            services.AddScoped<ClientUpdateService>();
         }
 
         /// <summary>
