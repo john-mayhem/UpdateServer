@@ -1,0 +1,277 @@
+{
+  "source_base_path": "/home/runner/work/UpdateServer/UpdateServer/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Controllers.AuthController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Controllers.AuthController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Controllers.DbController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Controllers.DbController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Controllers.UpdateController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Controllers.UpdateController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Controllers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Middleware.LogEnrichmentMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Middleware.LogEnrichmentMiddleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Middleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Middleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Models.ClientUpdateInfoModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Models.ClientUpdateInfoModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Models.ClientUpdateModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Models.ClientUpdateModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Models.FileIngestModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Models.FileIngestModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Models.LoginModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Models.LoginModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Program.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Services.ClientUpdateService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Services.ClientUpdateService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Services.DbInstall.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Services.DbInstall.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Services.DbLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Services.DbLogger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Services.DbUserValidation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Services.DbUserValidation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Services.FileStorageService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Services.FileStorageService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Services.PerformanceMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Services.PerformanceMetrics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Services.PerformanceService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Services.PerformanceService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.Startup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UpdateServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UpdateServer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
