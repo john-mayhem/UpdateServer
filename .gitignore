@@ -3,3 +3,7 @@ documentation.txt
 Properties/PublishProfiles/FolderProfile.pubxml
 Properties/PublishProfiles/FolderProfile.pubxml.user
 *.json
+/bin
+/logs
+/obj
+appsettings.json
